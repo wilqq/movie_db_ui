@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="./node_modules/mocha/mocha.css">
+</head>
+<body>
+  <div style="display:none">
+    <div id="root"></div>
+  </div>
+
+  <div id="mocha"></div>
+  <script src="./node_modules/mocha/mocha.js"></script>
+  <script src="./node_modules/chai/chai.js"></script>
+  <script src="./node_modules/chai-dom/chai-dom.js"></script>
+  <script>
+    mocha.ui('bdd');
+    mocha.reporter('html');
+    var expect = chai.expect;
+  </script>
+  <script src="./test/integration/AppTest.js"></script>
+  <script>
+    mocha.run();
+  </script>
+
+  <script src="index_bundle.js"></script>
+</body>
+</html>
