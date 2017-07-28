@@ -1,6 +1,9 @@
-import { expect } from 'chai';
+import chai, { expect } from 'chai';
+import chaiDom from 'chai-dom';
 
 import AppContainer from '../../../src/containers/AppContainer';
+
+chai.use(chaiDom);
 
 describe('AppContainer', () => {
   let subject;
@@ -9,9 +12,9 @@ describe('AppContainer', () => {
     subject = new AppContainer();
   });
 
-  describe('ping', () => {
-    it('returns pong', () => {
-      expect(subject.ping()).to.eq('pong');
+  describe('renderContent', () => {
+    it('returns App component in element', () => {
+      expect(subject.renderContent()).to.have.text('Movie DB UISearch');
     });
   });
 });

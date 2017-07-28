@@ -19,13 +19,17 @@ export default class AppContainer {
     });
   }
 
+  renderContent() {
+    return (new App({
+      movies: this.movies,
+      handleSearchFormSubmit: this.handleSearchFormSubmit,
+    })).render();
+  }
+
   render() {
     this.el.innerHTML = '';
     this.el.appendChild(
-      (new App({
-        movies: this.movies,
-        handleSearchFormSubmit: this.handleSearchFormSubmit,
-      })).render()
+      this.renderContent()
     );
   }
 }

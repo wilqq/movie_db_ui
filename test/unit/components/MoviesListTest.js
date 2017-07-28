@@ -38,7 +38,6 @@ describe('MoviesList', () => {
     });
 
     it('output contains renderer results', () => {
-      console.log(JSON.stringify(renderedData));
       expect(renderedContent).to.have.text('rendered_movierendered_movie');
     });
 

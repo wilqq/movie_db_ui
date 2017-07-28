@@ -15,7 +15,7 @@ export default class SearchForm {
   render() {
     return (
       form({ onsubmit: this.onSubmit }, [
-        input({name: 'query'}),
+        input({ name: 'query' }),
         button({ type: 'submit' }, ['Search'])
       ])
     );
