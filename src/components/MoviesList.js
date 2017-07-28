@@ -15,7 +15,7 @@ export default class MoviesList {
   render() {
     return (
       div(
-        { className: 'movies-list' },
+        { id: 'movies-list', className: 'movies-list' },
         this.renderMovies()
       )
     );
