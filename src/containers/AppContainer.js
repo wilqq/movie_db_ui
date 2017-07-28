@@ -4,11 +4,17 @@ import App from '../components/App';
 export default class AppContainer {
   constructor(el) {
     this.el = el;
+    this.movies = [];
   }
 
-  init() {
-    MovieModel.search({ query: 'aveng' }).then((response) => {
-      this.data = response;
+  handleSearchFormSubmit = (query) => {
+    this.query = query;
+    this.loadApiData();
+  }
+
+  loadApiData() {
+    MovieModel.search({ query: this.query }).then((movies) => {
+      this.movies = movies;
       this.render();
     });
   }
@@ -17,7 +23,8 @@ export default class AppContainer {
     this.el.innerHTML = '';
     this.el.appendChild(
       (new App({
-        data: this.data,
+        movies: this.movies,
+        handleSearchFormSubmit: this.handleSearchFormSubmit,
       })).render()
     );
   }
