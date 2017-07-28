@@ -7,9 +7,10 @@ chai.use(chaiDom);
 
 describe('Movie', () => {
   let subject;
+  const movieData = { title: 'title_stub', overview: 'overview_stub', voteAverage: 'vote_stub' };
 
   beforeEach(() => {
-    subject = new Movie({ title: 'title_stub', overview: 'overview_stub', voteAverage: 'vote_stub' });
+    subject = new Movie(movieData);
   });
 
   describe('render output', () => {
@@ -20,15 +21,15 @@ describe('Movie', () => {
     });
 
     it('contains title', () => {
-      expect(renderedContent.querySelector('.title')).to.have.text('title_stub');
+      expect(renderedContent.querySelector('.title')).to.have.text(movieData.title);
     });
 
     it('contains overview', () => {
-      expect(renderedContent.querySelector('.overview')).to.have.text('overview_stub');
+      expect(renderedContent.querySelector('.overview')).to.have.text(movieData.overview);
     });
 
     it('contains voteAverage', () => {
-      expect(renderedContent.querySelector('.vote-average')).to.have.text('vote_stub');
+      expect(renderedContent.querySelector('.vote-average')).to.have.text(movieData.voteAverage);
     });
   });
 });
