@@ -1,5 +1,11 @@
+import { div, h1 } from '../lib/make_element';
+
 const root = document.getElementById('root');
-const header = document.createElement('h1');
-const textNode = document.createTextNode('Movie DB UI');
-header.appendChild(textNode);
-root.appendChild(header);
+
+root.appendChild(
+  div({ className: 'container' }, [
+    h1({ id: 'title' }, [
+      'Movie DB UI'
+    ])
+  ])
+);
