@@ -1,11 +1,5 @@
-import { div, h1 } from '../lib/make_element';
+import AppContainer from './containers/AppContainer';
 
 const root = document.getElementById('root');
-
-root.appendChild(
-  div({ className: 'container' }, [
-    h1({ id: 'title' }, [
-      'Movie DB UI'
-    ])
-  ])
-);
+const container = new AppContainer(root);
+container.init();

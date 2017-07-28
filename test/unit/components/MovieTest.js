@@ -7,7 +7,7 @@ chai.use(chaiDom);
 
 describe('Movie', () => {
   let subject;
-  const movieData = { title: 'title_stub', overview: 'overview_stub', voteAverage: 'vote_stub' };
+  const movieData = { title: 'title_stub', overview: 'overview_stub', vote_average: 'vote_stub' };
 
   beforeEach(() => {
     subject = new Movie(movieData);
@@ -29,7 +29,7 @@ describe('Movie', () => {
     });
 
     it('contains voteAverage', () => {
-      expect(renderedContent.querySelector('.vote-average')).to.have.text(movieData.voteAverage);
+      expect(renderedContent.querySelector('.vote-average')).to.have.text(movieData.vote_average);
     });
   });
 });

@@ -1,6 +1,24 @@
-export default class AppContainer {
+import MovieModel from '../models/Movie';
+import App from '../components/App';
 
-  ping() {
-    return 'pong';
+export default class AppContainer {
+  constructor(el) {
+    this.el = el;
+  }
+
+  init() {
+    MovieModel.search({ query: 'aveng' }).then((response) => {
+      this.data = response;
+      this.render();
+    });
+  }
+
+  render() {
+    this.el.innerHTML = '';
+    this.el.appendChild(
+      (new App({
+        data: this.data,
+      })).render()
+    );
   }
 }

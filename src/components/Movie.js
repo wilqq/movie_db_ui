@@ -1,11 +1,11 @@
 import { div, h3, p } from '../../lib/make_element';
 
 export default class Movie {
-  constructor({ title, overview, posterPath, voteAverage }) {
+  constructor({ title, overview, poster_path, vote_average }) {
     this.title = title;
     this.overview = overview;
-    this.posterPath = posterPath;
-    this.voteAverage = voteAverage;
+    this.posterPath = poster_path;
+    this.voteAverage = vote_average.toString();
   }
 
   render() {

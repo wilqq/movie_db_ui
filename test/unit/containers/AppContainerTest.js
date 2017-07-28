@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 
-import AppContainer from '../../src/containers/AppContainer';
+import AppContainer from '../../../src/containers/AppContainer';
 
 describe('AppContainer', () => {
   let subject;
