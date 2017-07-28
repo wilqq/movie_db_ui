@@ -13,8 +13,9 @@ describe('Movie', () => {
 
   describe('search', () => {
     context('valid response', () => {
+      const movies = ['movie_1', 'movie_2'];
       const responseBody = JSON.stringify({
-        movies: ['movie_1', 'movie_2']
+        results: movies
       });
 
       beforeEach(() => {
@@ -27,7 +28,7 @@ describe('Movie', () => {
 
       it('returns promisse with api response', () => (
         Movie.search({ query: 'query' }).then((data) => {
-          expect(JSON.stringify(data)).to.eq(responseBody);
+          expect(data).to.eql(movies);
         })
       ));
     });
