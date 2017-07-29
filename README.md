@@ -38,4 +38,4 @@ yarn test
 ```
 yarn dev
 ```
-2. Open tests in browser http://localhost:8080/test_runner.html/
+2. Open tests in browser http://localhost:8080/test_runner.html
